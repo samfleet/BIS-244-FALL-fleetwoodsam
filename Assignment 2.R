@@ -1,0 +1,21 @@
+library(tidyverse)
+
+State_Data <- read.csv("us-states.csv")
+
+PA_Cases <- State_Data %>% filter(state=="Pennsylvania")
+
+n <- length(PA_Cases$date)
+
+PA_Cases$incr_cases <- 2
+
+PA_Cases$incr_deaths <- 0
+
+for (i in 2:n){
+  PA_Cases$incr_cases[i] <- (PA_Cases$cases[i]-PA_Cases$cases[i-1]) 
+}
+
+for (i in 2:n){
+  PA_Cases$incr_deaths[i] <- (PA_Cases$deaths[i]-PA_Cases$deaths[i-1]) 
+}
+
+View(PA_Cases)
