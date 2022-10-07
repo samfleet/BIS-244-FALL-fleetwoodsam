@@ -21,7 +21,7 @@ for (i in 2:n){
   lehigh_covid_data$incr_cases[i] <- (lehigh_covid_data$cases[i]-lehigh_covid_data$cases[i-1]) 
 }
 
-lehigh_covid_data$date <- as.Date(lehigh_covid_data$date , format = "%Y-%d")
+lehigh_covid_data$date <- as.Date(lehigh_covid_data$date)
 
 view(lehigh_covid_data)
 
@@ -32,5 +32,5 @@ view(lehigh_covid_data)
 ggplot(lehigh_covid_data, aes(x = date, y = incr_cases, group = 1)) + 
   geom_line(color = "blue") +
   labs(title = "COVID-19 Cases Reported in Lehigh PA", x = "Date", y = "New Cases Reported") +
-  scale_x_date(date_labels = "%Y-%b", date_breaks = "3 month") +
+  scale_x_date(date_labels = "%Y-%m", date_breaks = "6 months") +
   theme_gray()
