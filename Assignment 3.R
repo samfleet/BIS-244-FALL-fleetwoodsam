@@ -1,6 +1,16 @@
 library(tidyverse)
 library(ggplot2)
 
+#   Failure to clone/link COVID-19 repo: -10
+
+
+# correct way to Import data 
+county_data <- read_csv(here("covid-19-data","live","us-counties.csv"))
+recent_data <- read_csv(here("covid-19-data","us-counties-recent.csv"))
+zero_data <- read_csv(here("covid-19-data","us-counties-2020.csv"))
+one_data <- read_csv(here("covid-19-data","us-counties-2021.csv"))
+two_data <- read_csv(here("covid-19-data","us-counties-2022.csv"))
+
 zero_data <- read.csv("us-counties-2020.csv")
 one_data <- read.csv("us-counties-2021.csv")
 two_data <- read.csv("us-counties-2022.csv")
