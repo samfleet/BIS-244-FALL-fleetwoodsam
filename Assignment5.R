@@ -1,6 +1,4 @@
 library(readr)
-install.packages("maps","mapdata")
-library(maps)
 library(dplyr)
 library(gapminder)
 library(tidyverse)
@@ -14,7 +12,8 @@ cityTemp %>% select(Station.State, Data.Temperature.Avg.Temp, Data.Temperature.M
 
 cityTemp <- as.data.frame(cityTemp)
 
-
+install.packages("maps","mapdata")
+library(maps)
 us_states <- map_data("state")
 head(us_states)
 dim(us_states)
